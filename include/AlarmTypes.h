@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-struct AlarmSlot {
+struct ScheduleSlot {
   std::uint8_t hour;
   std::uint8_t minute;
   std::uint8_t enabled;
