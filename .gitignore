@@ -1,0 +1,7 @@
+.pio/
+.vscode/
+.idea/
+.DS_Store
+*.log
+.env
+platformio_override.ini
