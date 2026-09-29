@@ -2,7 +2,7 @@
 #include <Preferences.h>
 #include <WiFi.h>
 #include <WebServer.h>
-#include <esp_task_wdt.h>
+#include <esp_task_wdt.h>\n\n#include "AlarmTypes.h"
 
 // ======================================================
 // Hardware
@@ -31,12 +31,6 @@ const char* AP_PASSWORD = "remedio123";
 // ======================================================
 // Alarmes
 // ======================================================
-
-struct AlarmSlot {
-  uint8_t hour;
-  uint8_t minute;
-  uint8_t enabled;
-};
 
 AlarmSlot alarms[ALARM_COUNT];
 
