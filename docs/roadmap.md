@@ -76,7 +76,9 @@ Preferred path:
 - MAX98357A;
 - short compressed audio stored locally;
 - test intelligibility and volume;
-- associate a message with alarm events.
+- associate each alarm slot with one of two recipient profiles;
+- play a generic personalized message per recipient (“<name>, está na hora de tomar o remédio”);
+- keep medication-specific naming optional until the real medication list is available.
 
 Fallback gate:
 
@@ -86,7 +88,8 @@ If internal-flash audio becomes unstable, memory-constrained, or consumes too mu
 
 ## Day 6 — Robustness and UX
 
-- reminder repetition if unacknowledged;
+- repeat the voice reminder indefinitely until physical acknowledgement;
+- validate a comfortable repeat interval with the real users;
 - LED patterns for normal/alarm/config;
 - repeated reboot testing;
 - Wi-Fi timeout;
@@ -99,7 +102,7 @@ If internal-flash audio becomes unstable, memory-constrained, or consumes too mu
 - temporary 3D-printed enclosure;
 - large printed button actuator;
 - speaker placement;
-- realistic daily schedule;
+- realistic daily schedule for two recipient profiles;
 - supervised test;
 - capture friction points;
 - define v0.2 backlog.
