@@ -51,6 +51,12 @@ Current prototype stores:
 - enabled flag;
 - acknowledgement count.
 
+Planned data-model evolution:
+
+- each slot belongs to one of two recipient profiles;
+- recipient names are configuration data and will be added later;
+- item-specific spoken labels remain optional until the real schedule and audio workflow are known.
+
 Planned next data-model evolution:
 
 - each slot belongs to one of two recipient profiles (grandfather / grandmother);
@@ -135,3 +141,20 @@ When one or more enabled alarm slots match the current minute:
 The repeat interval is intentionally not fixed yet; it should be validated with the real users rather than guessed in software.
 
 If reminders for both recipient profiles are due at the same minute, the event model must preserve both matches so neither person is silently omitted.
+
+
+## Reminder lifecycle
+
+Schedules are daily in the MVP.
+
+When one or more enabled slots match the current minute:
+
+1. the device enters ALARM;
+2. it plays the spoken prompt for the matching recipient profile;
+3. the prompt repeats at a controlled interval;
+4. repetition continues until the physical acknowledgement button is pressed;
+5. acknowledgement returns the device to IDLE.
+
+The repeat interval is intentionally TBD pending real-user validation.
+
+If reminders for both recipient profiles are due at the same minute, the event model must preserve both matches so neither reminder is dropped.
