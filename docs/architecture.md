@@ -51,6 +51,12 @@ Current prototype stores:
 - enabled flag;
 - acknowledgement count.
 
+Planned next data-model evolution:
+
+- each slot belongs to one of two recipient profiles (grandfather / grandmother);
+- recipient display names are configuration data and will be added when available;
+- medication-specific names remain optional/deferred until the real medication list and audio workflow are known.
+
 The RTC will provide wall-clock time; NVS remains responsible for configuration persistence.
 
 ## Networking
@@ -112,3 +118,20 @@ Later:
 - battery state monitoring.
 
 A TP4056 alone is not considered the final UPS architecture.
+
+
+## Reminder lifecycle
+
+For the MVP, schedules are daily.
+
+When one or more enabled alarm slots match the current minute:
+
+1. the device enters ALARM;
+2. the corresponding recipient message is played;
+3. the reminder repeats at a controlled interval;
+4. repetition continues indefinitely until the physical button is pressed;
+5. acknowledgement returns the device to IDLE.
+
+The repeat interval is intentionally not fixed yet; it should be validated with the real users rather than guessed in software.
+
+If reminders for both recipient profiles are due at the same minute, the event model must preserve both matches so neither person is silently omitted.
