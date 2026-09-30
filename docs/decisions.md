@@ -57,3 +57,30 @@ The final enclosure can use a large 3D-printed button/cap that actuates a small 
 **Decision:** do not mechanically dispense medication.
 
 **Why:** motors, jams, pill geometry, dosing errors, and safety implications would dramatically increase complexity and risk before the reminder concept is validated.
+
+
+## ADR-009 — Daily schedules for MVP
+
+**Decision:** alarm slots repeat every day in v0.1.
+
+**Why:** the first real use case does not require weekday-specific scheduling. A daily model keeps configuration and scheduler behavior simple.
+
+**Deferred:** per-weekday and date-specific rules may be added only if real usage demonstrates a need.
+
+## ADR-010 — Two recipient profiles
+
+**Decision:** the MVP must support two independent recipient groups: grandfather and grandmother.
+
+**Initial audio behavior:** each configured reminder belongs to one recipient profile and plays a generic personalized phrase, for example “<name>, está na hora de tomar o remédio.”
+
+**Names:** the actual names will be added later when supplied by the family.
+
+**Medication names:** associating individual medication names with reminders is desirable, but explicitly deferred until the medication list and final audio workflow are known.
+
+## ADR-011 — Reminder persists until acknowledgement
+
+**Decision:** an active reminder is not considered complete until the physical acknowledgement button is pressed.
+
+**Behavior:** voice reminders should repeat indefinitely, at a controlled interval, until acknowledgement. The exact repeat interval is still to be validated with the users.
+
+**Why:** a single playback can be missed, while automatic timeout would silently turn a missed reminder into an apparently completed event.
