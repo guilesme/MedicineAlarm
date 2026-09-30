@@ -84,3 +84,22 @@ The final enclosure can use a large 3D-printed button/cap that actuates a small 
 **Behavior:** voice reminders should repeat indefinitely, at a controlled interval, until acknowledgement. The exact repeat interval is still to be validated with the users.
 
 **Why:** a single playback can be missed, while automatic timeout would silently turn a missed reminder into an apparently completed event.
+
+
+## ADR-009 — Daily schedules for MVP
+
+**Decision:** alarm slots repeat every day in v0.1.
+
+**Why:** the first use case does not require weekday-specific scheduling. Daily scheduling keeps configuration and scheduler behavior simple.
+
+## ADR-010 — Two recipient profiles
+
+**Decision:** the MVP supports two independent recipient profiles.
+
+Each reminder belongs to one profile. Initial spoken prompts are generic and personalized by the profile name. Names will be added when available. Item-specific spoken labels can be added later after the real schedule is known.
+
+## ADR-011 — Reminder persists until acknowledgement
+
+**Decision:** a reminder remains active until the physical acknowledgement button is pressed.
+
+The spoken prompt should repeat indefinitely at a controlled interval. The interval remains TBD until it can be validated with the real users.
